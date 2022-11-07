@@ -1,24 +1,33 @@
+                                                                                                                            
 #ho definito le funzioni in un altro file e le ho importate
 from funzioni import *
 
 
-utente = int ( input("Ciao! dimmi cosa vuoi calcolare:\n1)Perimetro del quadrato\n2)Circonferenza del cerchio\n3)Perimetro del rettangolo\n4)Per us>
+i=0
+# creo un while in modo tale che subito dopo una delle varie scelte non mi si chiuda il programma ma mi dia la possibilità di continuare a scegliere 
+while(i<4):
+
+        utente = int ( input("Ciao! dimmi cosa vuoi calcolare:\n1)Perimetro del quadrato\n2)Circonferenza del cerchio\n3)Perimetro del rettangolo\n4)Per >
 
 #nel primo if se l'utente digiterà 1 partita la funzione quadrato() che farà calcolare il perimetro del quadrato
-if (utente == 1):
-        quadrato()
-#con 2 partirà la funzione cerchio() che farà calcolare la circonferenza del cerchio   
-elif (utente == 2):
-        cerchio()  
+        if (utente == 1):
+                quadrato()
+                i=i-1
+#con 2 partirà la funzione cerchio() che farà calcolare la circonferenza del cerchio
+        elif (utente == 2):
+                cerchio()
+                i=i-1
 #con 3 partirà la funzione rettangolo() che farà calcolare il perimetro del rettangolo
-elif (utente == 3):
-        rettangolo()
+        elif (utente == 3):
+                rettangolo()
+                i=i-1
 #con 4 uscirà 
-elif (utente == 4):
-        quit()
+        elif (utente == 4):
+                quit()
+                i=i-1
 #se verrà digitato un altro valore verrà riportato il print contenuto nell'else
-else:
-        print ("Premi 1 per il quadrato, 2 per il cerchio o 3 per il rettangolo. grazie\n")
+        else:
+                print ("Premi 1 per il quadrato, 2 per il cerchio,3 per il rettangolo o 4 per uscire. grazie\n")
 
 
 '''
